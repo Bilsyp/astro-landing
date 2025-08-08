@@ -7,6 +7,6 @@ import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
   site: "https://bilsyp.github.io",
-  base: "/astro-landing",
+  base: "/astro-landing/",
   integrations: [mdx(), sitemap()],
 });
