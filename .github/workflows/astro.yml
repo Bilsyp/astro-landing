@@ -87,7 +87,7 @@ jobs:
         run: |
           sudo apt-get install -y jq
           TIME_NOW=$(date -u)
-          curl -X POST https://n8n.bilsypdev.site/webhook-test/fc3a2a9d-53b5-48c5-b32f-dd46c93dc858 \
+          curl -X POST https://n8n.bilsypdev.site/webhook/fc3a2a9d-53b5-48c5-b32f-dd46c93dc858 \
           -H "Content-Type: application/json" \
           -d "$(jq -n \
             --arg status '✅ SUCCESS' \
@@ -103,7 +103,7 @@ jobs:
       - name: Notify FAILED deploy to Telegram via n8n
         run: |
           sudo apt-get install -y jq
-          curl -X POST https://n8n.bilsypdev.site/webhook-test/fc3a2a9d-53b5-48c5-b32f-dd46c93dc858 \
+          curl -X POST https://n8n.bilsypdev.site/webhook/fc3a2a9d-53b5-48c5-b32f-dd46c93dc858 \
           -H "Content-Type: application/json" \
           -d "$(jq -n \
             --arg status '❌ FAILED' \
