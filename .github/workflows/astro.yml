@@ -90,7 +90,7 @@ jobs:
           curl -X POST https://n8n.bilsypdev.site/webhook/fc3a2a9d-53b5-48c5-b32f-dd46c93dc858 \
           -H "Content-Type: application/json" \
           -d "$(jq -n \
-            --arg status '✅ SUCCESS' \
+            --arg status '✅ SUCCESS!' \
             --arg repo '${{ github.repository }}' \
             --arg timestamp "$TIME_NOW" \
            '{status: $status, repo: $repo, timestamp: $timestamp}')"
