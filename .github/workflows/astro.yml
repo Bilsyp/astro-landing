@@ -88,3 +88,14 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Notify to Telegram via n8n
+        if: success() # cuma kalau sukses
+        run: |
+          curl -X POST https://n8n.bilsypdev.site/webhook/6e4465e8-1240-4044-b976-f874ee1439e3 \
+          -H "Content-Type: application/json" \
+          -d '{
+            "status": "✅ SUCCESS",
+            "repo": "${{ github.repository }}",
+            "timestamp": "'$(date -u)'"
+          }'
+
